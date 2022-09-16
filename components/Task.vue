@@ -1,14 +1,16 @@
 <template>
   <li
-    :class="`list-group-item list-group-item-success ${
-      task.done && 'text-secondary'
+    :class="`list-group-item list-group-item-success d-flex justify-content-between align-items-center ${
+      task.done && 'text-secondary '
     }`"
   >
     {{ task.content }}
-    <button class="btn btn-primary" @click="toggleDone">
-      {{ task.done ? 'Undo' : 'Done' }}
-    </button>
-    <button @click="removeTask" class="btn btn-danger">Delete</button>
+    <div class="m-1">
+      <button class="btn btn-primary" @click="toggleDone">
+        {{ task.done ? 'Undo' : 'Done' }}
+      </button>
+      <button @click="removeTask" class="btn btn-danger">Delete</button>
+    </div>
   </li>
 </template>
 

@@ -17,8 +17,13 @@
       <button class="btn btn-primary" @click.prevent="addTask">Add</button>
     </form>
 
-    <ul>
-      <Task v-for="task in $store.state.tasks" :key="task.id" :task="task" />
+    <ul class="p-0 min-vw-90">
+      <Task
+        :class="`${task.done && 'bg-light'}`"
+        v-for="task in $store.state.tasks"
+        :key="task.id"
+        :task="task"
+      />
     </ul>
   </main>
 </template>
