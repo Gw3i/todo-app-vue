@@ -14,16 +14,17 @@
           @keypress.enter="addTask"
         />
       </label>
-      <button class="btn btn-primary" @click="addTask">Add</button>
+      <button class="btn btn-primary" @click.prevent="addTask">Add</button>
     </form>
 
     <ul>
-      <!-- Task Component-->
+      <Task v-for="task in $store.state.tasks" :key="task.id" :task="task" />
     </ul>
   </main>
 </template>
 
 <script>
+import Task from '../components/Task.vue'
 export default {
   data() {
     return {
@@ -38,5 +39,6 @@ export default {
       }
     },
   },
+  components: { Task },
 }
 </script>
