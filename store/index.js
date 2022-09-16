@@ -1,10 +1,12 @@
+import { nanoid } from 'nanoid'
+
 export const state = () => ({
   tasks: [],
 })
 
 export const mutations = {
   addTask(state, task) {
-    state.tasks = [{ content: task, done: false }, ...state.tasks]
+    state.tasks = [{ id: nanoid(), content: task, done: false }, ...state.tasks]
   },
   removeTask(state, task) {
     state.tasks.splice(state.tasks.indexOf(task), 1)
