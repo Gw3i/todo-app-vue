@@ -9,7 +9,7 @@
       <button class="btn btn-primary" @click="toggleDone">
         {{ task.done ? 'Undo' : 'Done' }}
       </button>
-      <button @click="removeTask" class="btn btn-danger">Delete</button>
+      <button @click="removeTask" class="btn btn-danger">X</button>
     </div>
   </li>
 </template>
